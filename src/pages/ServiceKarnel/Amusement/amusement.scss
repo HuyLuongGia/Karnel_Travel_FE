@@ -1,0 +1,107 @@
+.amusement__container {
+    background: #001232;
+    .amusement__banner {
+        background-image: url("https://saigon-tourist.com/files/images/giai-tri/vietnam-golf1.jpg");
+        background-size: cover;
+        background-position: bottom;
+        min-height: 420px;
+        padding-top: 134px;
+        padding-bottom: 15px;
+        position: relative;
+        &::after {
+            content: "";
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .amuseBanner__item {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            top: 130px;
+            z-index: 1;
+            .amuseBanner__title {
+                font-weight: bold;
+                font-size: 3rem;
+                line-height: 120%;
+                color: #fff;
+                margin-top: 0;
+                font-style: italic;
+            }
+            hr {
+                background-image: url(../../../assets/img/hr.png);
+                width: 64px;
+                height: 10px;
+                display: inline-block;
+                border: none;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .amusement__item {
+        .amuse__content {
+            max-width: 1000px;
+            margin: 0 auto;
+            color: white;
+            margin-top: 70px;
+            line-height: 1.8rem;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        .amuse__img {
+            max-width: 1170px;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+    }
+    .amuse__item2 {
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-top: 100px;
+        padding-bottom: 30px;
+        .amuseItem2__contain {
+            .bg {
+                // height: 500px;
+                background: white;
+                .bg__content {
+                    height: 100%;
+                    .phone,
+                    .link {
+                        background: #f9f9f9;
+                        @apply py-1 px-2;
+                        display: inline-block;
+                    }
+                    span {
+                        @apply ml-2;
+                    }
+                }
+            }
+            // Edit Lib Slick Slider
+            .slick-slider {
+                .slick-slide > div {
+                    margin: 0 10px;
+                }
+                .slick-prev:before,
+                .slick-next:before {
+                    display: none;
+                }
+                .slick-arrow {
+                    color: white;
+                    font-size: 30px;
+                    &:hover {
+                        color: rgb(161, 161, 161);
+                    }
+                }
+                .slick-dots li button:before {
+                    color: white;
+                }
+            }
+        }
+    }
+}

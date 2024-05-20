@@ -1,0 +1,63 @@
+.travelKarnel__container {
+    background: #001232;
+    .travel__banner {
+        background-image: url("https://saigon-tourist.com/files/images/banner/banner-con-dao-2.png");
+        background-size: cover;
+        background-position: bottom;
+        min-height: 400px;
+        padding-top: 134px;
+        padding-bottom: 15px;
+        position: relative;
+        &::after {
+            content: "";
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .tBanner__item {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            top: 150px;
+            z-index: 1;
+            .tBanner__title {
+                font-weight: bold;
+                font-size: 3rem;
+                line-height: 120%;
+                color: #fff;
+                margin-top: 0;
+                font-style: italic;
+            }
+            hr {
+                background-image: url(../../../assets/img/hr.png);
+                width: 64px;
+                height: 10px;
+                display: inline-block;
+                border: none;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .travel__item {
+        max-width: 1170px;
+        margin: 0 auto;
+        @apply mt-10;
+        .travel__contact {
+            .tContact__item {
+                .tContact__content {
+                    .content__phone {
+                        background-color: #d4d4d4;
+                        display: inline-block;
+                        padding: 5px 10px;
+                    }
+                }
+            }
+        }
+    }
+}

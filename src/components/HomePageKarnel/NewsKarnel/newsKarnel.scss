@@ -1,0 +1,55 @@
+.hnews__container {
+    margin-top: 150px;
+    .col {
+        padding: 0;
+    }
+    .hnews__first {
+        position: relative;
+        &::before {
+            content: "";
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hnews__path__new {
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            color: white;
+            font-style: italic;
+
+            h3 {
+                font-size: 4rem;
+            }
+            hr {
+                background: url(../../../assets/img/hr.png);
+                background-repeat: no-repeat;
+                border: none;
+                background-size: contain;
+                width: 110px;
+                height: 30px;
+                display: inline-block;
+                font-size: 3rem;
+            }
+        }
+    }
+    .hnew__content__title {
+        margin: 13px 0;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 22px;
+        color: #d6a022;
+    }
+    .hnew__item__title {
+        font-weight: bold;
+        font-size: 1.17rem;
+        line-height: 120%;
+        color: #d0d0d0;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,42 @@
+.aboutUs__container {
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-top: 120px;
+    .aboutUs__content {
+        width: 40%;
+        .title {
+            font-weight: bold;
+            font-size: 2.625rem;
+            color: white;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        hr {
+            background: url(../../../assets/img/hr.png);
+            border: none;
+            background-size: contain;
+            width: 64px;
+            height: 10px;
+            display: inline-block;
+        }
+        button {
+            font-weight: bold;
+            font-size: 0.875rem;
+            line-height: 17px;
+            color: #fff !important;
+            background: #d6a022;
+            padding: 17px 60px;
+            transition: all 0.3s;
+            border: 1px solid #d6a022;
+            border-radius: 5px;
+            &:hover {
+                background: #00396b;
+                border: 1px solid #00396b;
+            }
+        }
+    }
+    .aboutUs__img {
+        width: 60%;
+    }
+}

@@ -1,0 +1,91 @@
+.gastronomy__container {
+    background: #001232;
+    .gastronomy__banner {
+        background-image: url("https://saigon-tourist.com/files/images/banner/food-banner.jpg");
+        background-size: cover;
+        background-position: bottom;
+        min-height: 450px;
+        padding-top: 134px;
+        padding-bottom: 15px;
+        position: relative;
+        &::after {
+            content: "";
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .gBanner__item {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            top: 30px;
+            z-index: 1;
+            .gBanner__title {
+                font-weight: bold;
+                font-size: 2.625rem;
+                line-height: 120%;
+                color: #fff;
+                margin-top: 0;
+                font-style: italic;
+            }
+            hr {
+                background-image: url(../../../assets/img/hr.png);
+                width: 64px;
+                height: 10px;
+                display: inline-block;
+                border: none;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .gastronomy__item {
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-top: 80px;
+        padding-bottom: 30px;
+        .gitem__contain {
+            .bg {
+                // height: 500px;
+                background: white;
+                .bg__content {
+                    height: 100%;
+                    .phone,
+                    .link {
+                        background: #f9f9f9;
+                        @apply py-1 px-2;
+                        display: inline-block;
+                    }
+                    span {
+                        @apply ml-2;
+                    }
+                }
+            }
+        }
+        // Edit Lib Slick Slider
+        .slick-slider {
+            .slick-slide > div {
+                margin: 0 10px;
+            }
+            .slick-prev:before,
+            .slick-next:before {
+                display: none;
+            }
+            .slick-arrow {
+                color: white;
+                font-size: 30px;
+                &:hover {
+                    color: rgb(161, 161, 161);
+                }
+            }
+            .slick-dots li button:before {
+                color: white;
+            }
+        }
+    }
+}
