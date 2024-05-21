@@ -10,4 +10,10 @@ export const hotelKarnel = {
     listHotelCenter: () => {
         return http.get("/hotel-resort/central");
     },
+    getHotelCentralDetail: (id) => {
+        return http.get(`/hotel-resort/central/${id}`);
+    },
+    getHotelSouthDetail: (id) => {
+        return http.get(`/hotel-resort/south/${id}`);
+    },
 };

@@ -15,6 +15,8 @@ import Travel from "../pages/ServiceKarnel/Travel/Travel";
 import Gastronomy from "../pages/ServiceKarnel/Gastronomy/Gastronomy";
 import Amusement from "../pages/ServiceKarnel/Amusement/Amusement";
 import AboutUsKarnel from "../pages/AboutUsKarnel/AboutUsKarnel";
+import HotelKarnelDetail from "../pages/HotelKarnelDetail/HotelKarnelDetail";
+import HotelSouth from "../pages/HotelKarnelDetail/HotelSouthDetail/HotelSouth";
 
 const HomePage = lazy(() => import("../pages/home"));
 const LoginPage = lazy(() => import("../pages/auth/Login"));
@@ -247,6 +249,22 @@ const useRoutesElements = () => {
                     element: (
                         <Suspense fallback={<div>Loading...</div>}>
                             <Amusement />
+                        </Suspense>
+                    ),
+                },
+                {
+                    path: `${paths.HOTELS}/central/:hotelId`,
+                    element: (
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <HotelKarnelDetail />
+                        </Suspense>
+                    ),
+                },
+                {
+                    path: `${paths.HOTELS}/south/:hotelId`,
+                    element: (
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <HotelSouth />
                         </Suspense>
                     ),
                 },

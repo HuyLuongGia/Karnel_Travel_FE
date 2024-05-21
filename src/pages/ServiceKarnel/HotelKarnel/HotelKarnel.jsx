@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import { useEffect } from "react";
 import { hotelKarnel } from "../../../api/hotelKarnel";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import paths from "../../../paths";
 const HotelKarnel = () => {
     const [arrHotelSouth, setArrHotelSouth] = useState([]);
     // console.log(arrHotelSouth);
@@ -132,9 +134,14 @@ const HotelKarnel = () => {
                                             </span>
                                         </div>
                                         <div>
-                                            <button className="py-3 px-4 rounded-md bg-yellow-600 w-full text-white font-bold">
-                                                READ MORE
-                                            </button>
+                                            <NavLink
+                                                to={`${paths.HOTELS}/south/${item.hsouthId}`}
+                                            >
+
+                                                <button className="py-3 px-4 rounded-md bg-yellow-600 w-full text-white font-bold">
+                                                    READ MORE
+                                                </button>
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
@@ -181,9 +188,14 @@ const HotelKarnel = () => {
                                             </span>
                                         </div>
                                         <div className="btn">
-                                            <button className="py-3 px-4 rounded-md bg-yellow-600 w-full text-white font-bold">
-                                                READ MORE
-                                            </button>
+                                            <NavLink
+                                                to={`${paths.HOTELS}/central/${item.hcentralId}`}
+                                            >
+                                                {" "}
+                                                <button className="py-3 px-4 rounded-md bg-yellow-600 w-full text-white font-bold">
+                                                    READ MORE
+                                                </button>
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
