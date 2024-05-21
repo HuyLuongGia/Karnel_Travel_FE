@@ -17,6 +17,8 @@ import Amusement from "../pages/ServiceKarnel/Amusement/Amusement";
 import AboutUsKarnel from "../pages/AboutUsKarnel/AboutUsKarnel";
 import HotelKarnelDetail from "../pages/HotelKarnelDetail/HotelKarnelDetail";
 import HotelSouth from "../pages/HotelKarnelDetail/HotelSouthDetail/HotelSouth";
+import GasCentralDetail from "../pages/GastronomyDetail/GastronomyCentralDetail/GasCentralDetail";
+import Payment from "../pages/Payment/Payment";
 
 const HomePage = lazy(() => import("../pages/home"));
 const LoginPage = lazy(() => import("../pages/auth/Login"));
@@ -268,6 +270,14 @@ const useRoutesElements = () => {
                         </Suspense>
                     ),
                 },
+                {
+                    path: `${paths.GASTRONOMY}/central/:gasId`,
+                    element: (
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <GasCentralDetail />
+                        </Suspense>
+                    ),
+                },
             ],
         },
         {
@@ -283,6 +293,14 @@ const useRoutesElements = () => {
             element: (
                 <Suspense fallback={<div>Loading...</div>}>
                     <ErrorPage message={"404 Not Found!!!"} />
+                </Suspense>
+            ),
+        },
+        {
+            path: paths.PAYMENT,
+            element: (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Payment />
                 </Suspense>
             ),
         },

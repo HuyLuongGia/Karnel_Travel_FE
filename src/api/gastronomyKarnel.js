@@ -10,4 +10,7 @@ export const gastronomyKarnel = {
     listGastronomySouth: () => {
         return http.get("/gastronomy/south");
     },
+    getGastronomyCentralDetail: (id) => {
+        return http.get(`/gastronomy/central/${id}`);
+    },
 };

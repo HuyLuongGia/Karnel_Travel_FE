@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import { useEffect } from "react";
 import { gastronomyKarnel } from "../../../api/gastronomyKarnel";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import paths from "../../../paths";
 
 const Gastronomy = () => {
     const [arrGasCentral, setArrGasCentral] = useState([]);
@@ -179,9 +181,13 @@ const Gastronomy = () => {
                                             </span>
                                         </div>
                                         <div>
-                                            <button className="py-3 px-4 rounded-md bg-yellow-600 w-full text-white font-bold">
-                                                READ MORE
-                                            </button>
+                                            <NavLink
+                                                to={`${paths.GASTRONOMY}/central/${item.gasCentralId}`}
+                                            >
+                                                <button className="py-3 px-4 rounded-md bg-yellow-600 w-full text-white font-bold">
+                                                    READ MORE
+                                                </button>
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>

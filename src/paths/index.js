@@ -16,4 +16,5 @@ export default {
     AMUSEMENT: "/amusement",
     NEWS: "/news",
     ABOUT_KARNEL: "/about-us",
+    PAYMENT: "/PAYMENT",
 };
