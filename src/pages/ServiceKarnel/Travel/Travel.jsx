@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./travel.scss";
 import { travelKarnel } from "../../../api/travelKarnel";
+import { Link, NavLink } from "react-router-dom";
 
 const Travel = () => {
     const [arrTravelImg, setArrTravelImg] = useState([]);
@@ -102,12 +103,21 @@ const Travel = () => {
                                     </div>
                                     <div className="content__phone">
                                         <i className="fa-solid fa-phone text-[#00396B]"></i>
-                                        <span className="ml-2">{item.travelPhone}</span>
+                                        <span className="ml-2">
+                                            {item.travelPhone}
+                                        </span>
                                     </div>
                                     <div>
-                                        <button className="py-3 px-4 rounded-md bg-yellow-600 text-white font-bold mt-8 w-2/3">
-                                            READ MORE
-                                        </button>
+                                        <NavLink
+                                            target={"_blank"}
+                                            to={
+                                                "https://www.saigontourist.net/"
+                                            }
+                                        >
+                                            <button className="py-3 px-4 rounded-md bg-yellow-600 text-white font-bold mt-8 w-2/3">
+                                                READ MORE
+                                            </button>
+                                        </NavLink>
                                     </div>
                                 </div>
                             </div>

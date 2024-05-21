@@ -1,9 +1,10 @@
-.contact__container {
-    .contact__banner {
+.amuseDetail__container {
+    background: #001232;
+    .amuseDetail__banner {
         background-image: url("https://saigon-tourist.com/files/images/banner/trang-h-th-ng.jpg");
         background-size: cover;
         background-position: bottom;
-        min-height: 400px;
+        min-height: 450px;
         padding-top: 134px;
         padding-bottom: 15px;
         position: relative;
@@ -17,23 +18,23 @@
             height: 100%;
             z-index: 0;
         }
-        .contactBanner__item {
+        .amuseBanner__item {
             position: relative;
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
-            top: 100px;
+            top: 90px;
             z-index: 1;
-            .contactBanner__title {
+            font-style: italic;
+            .amuseDetail__title {
                 font-weight: bold;
                 font-size: 3rem;
                 line-height: 120%;
-                font-style: italic;
                 color: #fff;
                 margin-top: 0;
             }
             hr {
-                background-image: url(../../assets/img/hr.png);
+                background-image: url(../../../assets/img/hr.png);
                 width: 64px;
                 height: 10px;
                 display: inline-block;
@@ -43,13 +44,4 @@
             }
         }
     }
-}
-
-.custom-message .ant-message-notice {
-    width: 400px !important; /* Điều chỉnh độ rộng */
-}
-
-.custom-message .ant-message-custom-content {
-    padding: 10px; /* Điều chỉnh độ dài nội dung */
-    font-size: 15px;
 }

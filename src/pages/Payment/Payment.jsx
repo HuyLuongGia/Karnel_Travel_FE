@@ -1,11 +1,48 @@
+import { useParams } from "react-router-dom";
 import "./payment.scss";
 import { message } from "antd";
+import { gastronomyKarnel } from "../../api/gastronomyKarnel";
+import { useCallback, useEffect, useState } from "react";
+
+const INIT_GASTRONOMY_CENTRAL = {
+    gasCentralImg: "",
+    gasCentralTitle: "",
+    gasCentralAddress: "",
+    gasCentralPhone: "",
+    gasCentralLink: "",
+    hsouthVideo: "",
+};
+
 const Payment = () => {
+    let { gasId } = useParams();
+    // console.log(gasId);
+    const [gasDetailCentral, setGasDetailCentral] = useState(
+        INIT_GASTRONOMY_CENTRAL
+    );
+    console.log(gasDetailCentral);
+
+    const getGasCentralDetail = useCallback(() => {
+        gastronomyKarnel
+            .getGastronomyCentralDetail(gasId)
+            .then((res) => {
+                // console.log(res);
+                setGasDetailCentral(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [gasId]);
+
+    useEffect(() => {
+        getGasCentralDetail();
+    }, [getGasCentralDetail, gasId]);
+
     const [messageApi, contextHolder] = message.useMessage();
     const success = () => {
         messageApi.open({
             type: "success",
             content: "Thanks you for your payment",
+            className: "custom-message",
         });
     };
     return (
@@ -61,7 +98,7 @@ const Payment = () => {
                                     </div>
                                 </div>
                             </div>
-                            <form className="mt-16 max-w-lg">
+                            <form className="mt-16 max-w-lg" id="form-payment">
                                 <h2 className="text-2xl font-extrabold text-white">
                                     Payment method
                                 </h2>
@@ -182,7 +219,12 @@ const Payment = () => {
                                         Back
                                     </button>
                                     <button
-                                        onClick={success}
+                                        onClick={() => {
+                                            success();
+                                            document
+                                                .getElementById("form-payment")
+                                                .reset();
+                                        }}
                                         type="button"
                                         className="min-w-[150px] px-6 py-3.5 text-sm bg-[#333] text-white rounded-md hover:bg-[#111]"
                                     >
@@ -192,24 +234,24 @@ const Payment = () => {
                             </form>
                         </div>
                         <div className="bg-gray-100 px-6 py-8 rounded-md">
-                            <h2 className="text-5xl font-extrabold text-[#333]">
-                                $750
+                            <h2 className="text-3xl font-extrabold text-[#333]">
+                                {gasDetailCentral.gasCentralTitle}
                             </h2>
                             <ul className="text-[#333] mt-10 space-y-6">
                                 <li className="flex flex-wrap gap-4 text-base">
-                                    Split Sneakers{" "}
+                                    Address{" "}
                                     <span className="ml-auto font-bold">
-                                        $150.00
+                                        {gasDetailCentral.gasCentralAddress}
                                     </span>
                                 </li>
                                 <li className="flex flex-wrap gap-4 text-base">
-                                    Echo Elegance{" "}
+                                    Phone{" "}
                                     <span className="ml-auto font-bold">
-                                        $200.00
+                                        {gasDetailCentral.gasCentralPhone}
                                     </span>
                                 </li>
                                 <li className="flex flex-wrap gap-4 text-base">
-                                    VelvetGlide Boots{" "}
+                                    Cash{" "}
                                     <span className="ml-auto font-bold">
                                         $300.00
                                     </span>
@@ -222,7 +264,7 @@ const Payment = () => {
                                 </li>
                                 <li className="flex flex-wrap gap-4 text-base font-bold border-t-2 pt-4">
                                     Total{" "}
-                                    <span className="ml-auto">$750.00</span>
+                                    <span className="ml-auto">$400.00</span>
                                 </li>
                             </ul>
                         </div>

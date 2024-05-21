@@ -21,7 +21,10 @@
             left: 20px;
             color: white;
             font-style: italic;
-
+            transition: all 0.2s;
+            &:hover {
+                color: #D6932C;
+            }
             h3 {
                 font-size: 4rem;
             }

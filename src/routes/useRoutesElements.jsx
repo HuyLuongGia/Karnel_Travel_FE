@@ -19,6 +19,7 @@ import HotelKarnelDetail from "../pages/HotelKarnelDetail/HotelKarnelDetail";
 import HotelSouth from "../pages/HotelKarnelDetail/HotelSouthDetail/HotelSouth";
 import GasCentralDetail from "../pages/GastronomyDetail/GastronomyCentralDetail/GasCentralDetail";
 import Payment from "../pages/Payment/Payment";
+import AmuseDetail from "../pages/AmuseDetail/AmuseDetail";
 
 const HomePage = lazy(() => import("../pages/home"));
 const LoginPage = lazy(() => import("../pages/auth/Login"));
@@ -278,6 +279,14 @@ const useRoutesElements = () => {
                         </Suspense>
                     ),
                 },
+                {
+                    path: `${paths.AMUSEMENT}/:amuseId`,
+                    element: (
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <AmuseDetail />
+                        </Suspense>
+                    ),
+                },
             ],
         },
         {
@@ -297,7 +306,7 @@ const useRoutesElements = () => {
             ),
         },
         {
-            path: paths.PAYMENT,
+            path: `${paths.PAYMENT}/central/:gasId`,
             element: (
                 <Suspense fallback={<div>Loading...</div>}>
                     <Payment />

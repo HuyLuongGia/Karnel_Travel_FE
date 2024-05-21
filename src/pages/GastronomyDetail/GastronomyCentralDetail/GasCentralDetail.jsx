@@ -132,7 +132,7 @@ const GasCentralDetail = () => {
                         </button>
                     </div>
                     <div>
-                        <NavLink to={paths.PAYMENT}>
+                        <NavLink to={`${paths.PAYMENT}/central/${gasId}`}>
                             <button className="py-3 px-4 w-full bg-orange-500 rounded-md text-white mt-9 text-xl font-bold">
                                 Booking Now
                             </button>

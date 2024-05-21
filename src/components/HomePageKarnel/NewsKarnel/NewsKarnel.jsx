@@ -1,18 +1,22 @@
+import { NavLink } from "react-router-dom";
 import "./newsKarnel.scss";
+import paths from "../../../paths";
 
 const NewsKarnel = () => {
     return (
         <div className="hnews__container flex container mx-auto gap-5">
             <div className="hnews__first flex-1">
-                <img
-                    className="hnewsImg__first w-full h-full object-cover"
-                    src="./public/img/hnews1.jpg"
-                    alt="news"
-                />
-                <div className="hnews__path__new">
-                    <h3>News</h3>
-                    <hr />
-                </div>
+                <NavLink to={paths.NEWS}>
+                    <img
+                        className="hnewsImg__first w-full h-full object-cover"
+                        src="./public/img/hnews1.jpg"
+                        alt="news"
+                    />
+                    <div className="hnews__path__new">
+                        <h3>News</h3>
+                        <hr />
+                    </div>
+                </NavLink>
             </div>
             <div className="flex-1">
                 <img

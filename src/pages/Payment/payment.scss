@@ -2,3 +2,12 @@
     background: #001436;
     height: 100vh;
 }
+
+.custom-message .ant-message-notice {
+    width: 500px !important; /* Điều chỉnh độ rộng */
+}
+
+.custom-message .ant-message-custom-content {
+    padding: 15px; /* Điều chỉnh độ dài nội dung */
+    font-size: 20px;
+}

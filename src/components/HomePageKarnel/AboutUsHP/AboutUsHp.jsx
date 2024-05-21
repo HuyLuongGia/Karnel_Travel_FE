@@ -1,5 +1,7 @@
 import "./aboutUsHp.scss";
 import image from "../../../assets/img/HomeAboutUs.png";
+import { NavLink } from "react-router-dom";
+import paths from "../../../paths";
 const AboutUsHp = () => {
     return (
         <div className="flex aboutUs__container gap-4">
@@ -18,7 +20,9 @@ const AboutUsHp = () => {
                     benefiting society and the community to develop economic as
                     well as spiritual and humanistic values. &#34;
                 </p>
-                <button className="mt-4">LEARN MORE</button>
+                <NavLink to={paths.ABOUT_KARNEL}>
+                    <button className="mt-4">LEARN MORE</button>
+                </NavLink>
             </div>
             <div className="aboutUs__img col">
                 <img className="h-100" src={image} alt="image" />

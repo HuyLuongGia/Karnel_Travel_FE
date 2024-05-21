@@ -6,6 +6,7 @@ const Contact = () => {
         messageApi.open({
             type: "success",
             content: "Send message success",
+            className: "custom-message",
         });
     };
     return (
