@@ -3,7 +3,6 @@ import { lazy, Suspense } from "react";
 import paths from "../paths";
 
 import MainLayout from "../layouts/MainLayout";
-import AdminLayout from "../layouts/AdminLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import ListMovie from "../components/ListMovie/ListMovie";
 import Theater from "../components/Theater/Theater";
@@ -30,7 +29,6 @@ const BlogPage = lazy(() => import("../pages/blog"));
 const EventPage = lazy(() => import("../pages/event"));
 const ErrorPage = lazy(() => import("../pages/error"));
 
-const AdminPage = lazy(() => import("../pages/admin"));
 const MovieManagerPage = lazy(() => import("../pages/managers/MovieManager"));
 const UserManagerPage = lazy(() => import("../pages/managers/UserManager"));
 const ShowtimeManagerPage = lazy(() =>
@@ -49,13 +47,6 @@ const BookingRouter = () => {
     let isAuthenticated = false;
 
     return isAuthenticated ? <Outlet /> : <Navigate to={paths.LOGIN} />;
-};
-
-const AdminRouter = () => {
-    // user's authentication for admin access
-    let isAuthenticated = false;
-
-    return isAuthenticated ? <Outlet /> : <Navigate to={"/401"} />;
 };
 
 const useRoutesElements = () => {
@@ -103,50 +94,7 @@ const useRoutesElements = () => {
                 },
             ],
         },
-        {
-            path: paths.ADMIN,
-            element: <AdminRouter />,
-            children: [
-                {
-                    path: "",
-                    element: <AdminLayout />,
-                    children: [
-                        {
-                            index: true,
-                            element: (
-                                <Suspense fallback={<div>Loading...</div>}>
-                                    <AdminPage />
-                                </Suspense>
-                            ),
-                        },
-                        {
-                            path: "users",
-                            element: (
-                                <Suspense fallback={<div>Loading...</div>}>
-                                    <UserManagerPage />
-                                </Suspense>
-                            ),
-                        },
-                        {
-                            path: "movies",
-                            element: (
-                                <Suspense fallback={<div>Loading...</div>}>
-                                    <MovieManagerPage />
-                                </Suspense>
-                            ),
-                        },
-                        {
-                            path: "showtime",
-                            element: (
-                                <Suspense fallback={<div>Loading...</div>}>
-                                    <ShowtimeManagerPage />
-                                </Suspense>
-                            ),
-                        },
-                    ],
-                },
-            ],
-        },
+
         {
             path: paths.HOME,
             element: <MainLayout />,

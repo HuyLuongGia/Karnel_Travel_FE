@@ -43,7 +43,7 @@ const Banner = () => {
         <div className="banner__container">
             {/*  */}
             <Carousel
-                // autoplay
+                autoplay
                 autoplaySpeed={3000}
                 prevArrow={<PrevArrow />}
                 nextArrow={<NextArrow />}

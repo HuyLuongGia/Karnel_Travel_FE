@@ -109,6 +109,7 @@ const Payment = () => {
                                             className="w-5 h-5 cursor-pointer"
                                             id="card"
                                             defaultChecked
+                                            required
                                         />
                                         <label
                                             htmlFor="card"
@@ -136,6 +137,7 @@ const Payment = () => {
                                             type="radio"
                                             className="w-5 h-5 cursor-pointer"
                                             id="paypal"
+                                            required
                                         />
                                         <label
                                             htmlFor="paypal"
@@ -183,6 +185,7 @@ const Payment = () => {
                                             type="number"
                                             placeholder="EXP."
                                             className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                                            required
                                         />
                                         <input
                                             type="number"
@@ -201,10 +204,12 @@ const Payment = () => {
                                             htmlFor="remember-me"
                                             className="ml-3 block text-sm"
                                         >
-                                            I accept the{" "}
+                                            <span className="text-white">
+                                                I accept the
+                                            </span>{" "}
                                             <a
                                                 href="javascript:void(0);"
-                                                className="text-blue-600 font-semibold hover:underline ml-1"
+                                                className="text-blue-200 font-semibold hover:underline ml-1"
                                             >
                                                 Terms and Conditions
                                             </a>
